@@ -77,7 +77,7 @@ public class StateStorage<TValue>
     {
         if (!File.Exists(filePath))
         {
-            File.Create(filePath);
+            using (File.Create(filePath)) { }
         }
         StringBuilder sb = new StringBuilder();
         sb.AppendLine(saveFileKey);
